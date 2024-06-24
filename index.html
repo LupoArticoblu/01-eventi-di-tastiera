@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3"></script>
+  <title>eventi di tastiera</title>
+</head>
+<body>
+  <div id="app">
+    <!-- L'EVENTO DI TASTIERA @KEYUP E' RICHIAMATO DAL COMPONENTE VUE: fa si che un tasto scateni una funzione-->
+    <input @keyup="keyUp()" type="text" v-model="msg">
+    <p>{{ msg }}</p>
+    <!-- scelgo a quale tasto abbinare l'evento scatenante-->
+    <input @keyup.enter="keyUp()" type="text" placeholder="evento in log">
+    <!-- @keyup può avere anche più combinazioni di tasti-->
+    <input @keyup.alt.enter="keyUp()" type="text" placeholder="alt
+    + enter">
+    <!-- IL V-IF: crea tag all'interno dell' html ma a differenza del v-show sceglie di visualizzare o no tramite la condizione che si dà-->
+    <p  v-if="testoShow">
+      <!-- ATTENZIONE: il tag p ha problemi di ereditarietà verso i suoi figli-->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquam nisi sint itaque. Sequi, atque et consequuntur nihil accusamus dignissimos in quisquam aspernatur molestiae harum ipsa ab vel modi dolorem?
+    </p>
+    <p v-else>clicca ancora</p>
+    <button @click="showTesto()">mostra/nascondi</button><br>
+
+    <input type="text" v-model="stampaInput">
+    <p v-if="stampaInput === 'primo'">Stampa primo</p>
+    <p v-else-if="stampaInput === 'secondo'">Stampa secondo</p>
+    <p v-else>Stampa altro</p>
+
+    <!--V-FOR: crea un tag per ogni elemento ciclato-->
+    <ul>
+      <li v-for="colore in colori">{{ colore }}</li>
+    </ul>
+    
+    <!-- v-for con indice-->
+    <ul>
+      <li v-for="(colore, index) in colori">{{ index }} - {{ colore }}</li>
+    </ul>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
