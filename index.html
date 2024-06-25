@@ -36,7 +36,8 @@
     
     <!-- v-for con indice-->
     <ul>
-      <li v-for="(colore, index) in colori">{{ index }} - {{ colore }}</li>
+      <!-- binding dello style e gli passo colore-->
+      <li v-for="(colore, index) in colori" :style="'background-color:'+ colore">{{ index }} - {{ colore }}</li>
     </ul>
 
   </div>

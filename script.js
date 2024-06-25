@@ -6,7 +6,7 @@ createApp({
       msg: 'Hello World!',
       testoShow: true,
       stampaInput: '',
-      colori:['verde', 'giallo', 'rosso', 'blu'],
+      colori:['green', 'yellow', 'red', 'blue'],
     }
   },
   methods: {
@@ -18,3 +18,4 @@ createApp({
     }
   }
 }).mount('#app')
+
